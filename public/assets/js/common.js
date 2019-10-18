@@ -10,3 +10,13 @@ $("#logout").on("click", function() {
     });
   }
 });
+
+$.ajax({
+  type: "get",
+  url: "/users/" + userId,
+  success: function(res) {
+    // console.log(res);
+    $(".profile .avatar").prop("src", res.avatar);
+    $(".profile .name").html(res.nickName);
+  }
+});
