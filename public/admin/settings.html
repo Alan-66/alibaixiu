@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="utf-8">
   <title>Settings &laquo; Admin</title>
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
+
 <body>
 
   <div class="main">
@@ -30,8 +32,9 @@
           <label for="site_logo" class="col-sm-2 control-label">网站图标</label>
           <div class="col-sm-6">
             <label class="form-image">
-              <input type="file">
-              <img src="../assets/img/logo.png">
+              <input type="file" id="logo">
+              <input type="hidden" name='logo' id="hiddenLogo">
+              <img src="../assets/img/logo.png" id="preview">
               <i class="mask fa fa-upload"></i>
             </label>
           </div>
@@ -46,10 +49,10 @@
           <label class="col-sm-2 control-label">评论</label>
           <div class="col-sm-6">
             <div class="checkbox">
-              <label><input  name="comment" value="true" type="checkbox" checked>开启评论功能</label>
+              <label><input name="comment" value="true" type="checkbox" checked>开启评论功能</label>
             </div>
             <div class="checkbox">
-              <label><input  name="review" value="false" type="checkbox" checked>评论必须经人工批准</label>
+              <label><input name="review" value="false" type="checkbox" checked>评论必须经人工批准</label>
             </div>
           </div>
         </div>
@@ -101,5 +104,8 @@
 
   <script src="../assets/vendors/jquery/jquery.js"></script>
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
+  <script src="../assets/vendors/art-template/template-web.js"></script>
+  <script src="../assets/js/settings.js"></script>
 </body>
+
 </html>

@@ -32,3 +32,33 @@ function changePage(page) {
     }
   });
 }
+
+//更改评论的状态
+$("#commentsList").on("click", ".status", function() {
+  var id = $(this).attr("data-id");
+  var status = $(this).attr("data-state");
+
+  $.ajax({
+    type: "put",
+    url: "/comments/" + id,
+    data: {
+      state: status == 1 ? 0 : 1
+    },
+    success: function(res) {
+      location.reload();
+    }
+  });
+});
+
+//评论删除功能
+$("#commentsList").on("click", ".del", function() {
+  var id = $(this).attr("data-id");
+
+  $.ajax({
+    type: "delete",
+    url: "/comments/" + id,
+    success: function(res) {
+      location.reload();
+    }
+  });
+});

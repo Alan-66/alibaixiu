@@ -61,7 +61,7 @@
         </a>
         <ul id="menu-posts" class="collapse">
           <li><a href="posts.html">所有文章</a></li>
-          <li><a href="post-add.html">写文章</a></li>
+          <li><a href="javasript:;">写文章</a></li>
           <li><a href="categories.html">分类目录</a></li>
         </ul>
       </li>
@@ -94,13 +94,13 @@
       <td>{{$value.state == 1?'已批准':'未批准'}}</td>
       <td class="text-center">
         {{if $value.state ==0}}
-        <a href="post-add.html" class="btn btn-info btn-xs" data-id='{{$value._id}}'
+        <a href="javascript:;" class="btn btn-success btn-xs status" data-id='{{$value._id}}'
           data-state='{{$value.state}}'>批准</a>
         {{else}}
-        <a href="post-add.html" class="btn btn-info btn-xs" data-id='{{$value._id}}'
+        <a href="javascript:;" class="btn btn-warning btn-xs status" data-id='{{$value._id}}'
           data-state='{{$value.state}}'>驳回</a>
         {{/if}}
-        <a href="javascript:;" class="btn btn-danger btn-xs">删除</a>
+        <a href="javascript:;" class="btn btn-danger btn-xs del" data-id='{{$value._id}}'>删除</a>
       </td>
     </tr>
     {{/each}}

@@ -1,3 +1,4 @@
+//获取文章分类选项数据
 $.ajax({
   type: "get",
   url: "/categories",
@@ -11,7 +12,7 @@ $.ajax({
 $("#feature").on("change", function() {
   //接收上传的文件
   var file = this.files[0];
-  //创建formData对象
+  //创建formData对象 实现二进制文件上传
   var formData = new FormData();
   //将选择的文件追加到formData对象中
   formData.append("cover", file);
@@ -35,6 +36,7 @@ $("#feature").on("change", function() {
 });
 
 $("#addForm").on("submit", function() {
+  //获取表单提交的数据
   var data = $(this).serialize();
   //发送ajax
   $.ajax({
