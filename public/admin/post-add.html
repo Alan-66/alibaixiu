@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="utf-8">
   <title>Add new post &laquo; Admin</title>
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
+
 <body>
 
   <div class="main">
@@ -33,7 +35,8 @@
           </div>
           <div class="form-group">
             <label for="content">内容</label>
-            <textarea name="content" id="content" class="form-control input-lg" cols="30" rows="10" placeholder="内容"></textarea>
+            <textarea name="content" id="content" class="form-control input-lg" cols="30" rows="10"
+              placeholder="内容"></textarea>
           </div>
         </div>
         <div class="col-md-3">
@@ -42,12 +45,12 @@
             <!-- show when image chose -->
             <img class="help-block thumbnail" style="display: none">
             <input id="feature" class="form-control" type="file">
+            <input type="hidden" id="hiddenCover" name="thumbnail">
           </div>
           <div class="form-group">
             <label for="category">所属分类</label>
             <select name="category" id="category" class="form-control">
-              <option value="1">未分类</option>
-              <option value="2">潮生活</option>
+
             </select>
           </div>
           <div class="form-group">
@@ -105,8 +108,19 @@
       </li>
     </ul>
   </div>
+  <!-- 分类模板 -->
+  <script type="text/html" id="categoryTpl">
+    <option value="1">未分类</option>
+    {{each data}}
+    <option value="{{$value._id}}">{{$value.title}}</option>
+    {{/each}}
+  </script>
+
 
   <script src="../assets/vendors/jquery/jquery.js"></script>
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
+  <script src="../assets/vendors/art-template/template-web.js"></script>
+  <script src="../assets/js/posts-add.js"></script>
 </body>
+
 </html>
